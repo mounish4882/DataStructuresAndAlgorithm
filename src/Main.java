@@ -1,5 +1,6 @@
 import com.mounish.Algorithms.FibonacciDynamicProgramming;
 import com.mounish.DataStructures.SingleLinkedList;
+import com.mounish.LeetCode.PalindromeInteger;
 import com.mounish.LeetCode.ReverseInteger;
 import com.mounish.LeetCode.TwoSum;
 
@@ -18,6 +19,8 @@ public class Main {
         System.out.println(Arrays.toString(TwoSum.twoSumHashing(arr,11)));
         System.out.println(Arrays.toString(TwoSum.twoSumSorting(arr,11)));
         System.out.println(ReverseInteger.reverseInteger(1387623));
+        System.out.println(PalindromeInteger.palindromeInteger(-1503432));
+        System.out.println(PalindromeInteger.palindromeInteger(123454321));
     }
 
 }
