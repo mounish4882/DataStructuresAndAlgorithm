@@ -1,6 +1,6 @@
 package com.mounish.DataStructures;
 
-public class SingleLinkedList {
+public class SinglyLinkedList {
 
     private static ListNode head;
 
