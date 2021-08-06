@@ -22,6 +22,8 @@ public class Main {
         System.out.println(RomanToInteger.romanToInteger("CLXIV"));
         String[] strings = {"FLOWER","FLOW","FLOOR"};
         System.out.println(LongestCommonPrefix.longestCommonPrefix(strings));
+        String parentheses = "([}}])";
+        System.out.println(ValidParanthesis.validParanthesis(parentheses));
     }
 
 }
