@@ -1,13 +1,10 @@
-import com.mounish.Algorithms.FibonacciDynamicProgramming;
-import com.mounish.DataStructures.SinglyLinkedList;
-import com.mounish.LeetCode.*;
-
-import java.util.Arrays;
+import com.mounish.Thread.StopThreadImplementingRunnable;
+import com.mounish.Thread.ThreadUsingLambdaFunction;
 
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 0;i < 200;i++) {
+        /*for (int i = 0;i < 200;i++) {
             SinglyLinkedList.insert(FibonacciDynamicProgramming.fib(i));
         }
         SinglyLinkedList.printAt(100);
@@ -24,6 +21,27 @@ public class Main {
         System.out.println(LongestCommonPrefix.longestCommonPrefix(strings));
         String parentheses = "([}}])";
         System.out.println(ValidParanthesis.validParanthesis(parentheses));
+        ThreadExtendingThreadClass.MyThread myThread = new ThreadExtendingThreadClass.MyThread();
+        myThread.start();
+        Thread thread = new Thread(new ThreadImplementingRunnable.MyRunnable());
+        thread.start();
+        Thread thread1 = new Thread(ThreadCreatingRunnable.runnable);
+        thread1.start();*//*
+        Thread thread2 = new Thread(ThreadUsingLambdaFunction.runnable,"The Thread 2");
+        thread2.start();
+        Thread thread3 = new Thread(ThreadUsingLambdaFunction.runnable,"The Thread 3");
+        thread3.start();*/
+        StopThreadImplementingRunnable.StoppableRunnable stoppableRunnable = new StopThreadImplementingRunnable.StoppableRunnable();
+        Thread thread4 = new Thread(stoppableRunnable,"Hello Thread");
+        thread4.start();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("requesting Stop");
+        stoppableRunnable.requestStop();
+        System.out.println("Stop Requested");
     }
 
 }
