@@ -1,13 +1,14 @@
 # Data Structures and Algorithms
 
-A comprehensive collection of data structures, algorithms, and LeetCode problem solutions implemented in **Java** and **Scala**.
+A comprehensive collection of data structures, algorithms, and LeetCode problem solutions implemented in **Java**, **Scala**, and **Python**.
 
 ## Overview
 
-This repository contains implementations of fundamental data structures, algorithms, and solutions to common coding problems. Each implementation is available in two languages:
+This repository contains implementations of fundamental data structures, algorithms, and solutions to common coding problems. Each implementation is available in three languages:
 
 - **Java** - Original implementations using OOP principles
 - **Scala** - Enhanced implementations with functional programming features
+- **Python** - Modern Pythonic implementations with type hints and async/await
 
 ## Repository Structure
 
@@ -54,7 +55,22 @@ DataStructuresAndAlgorithm/
 │       └── Thread/
 │           └── ScalaThreadingExamples.scala
 │
+├── python/                       # Python implementations
+│   ├── README.md
+│   └── com/mounish/
+│       ├── main.py               # Main entry point
+│       ├── data_structures/
+│       │   └── singly_linked_list.py
+│       ├── algorithms/
+│       │   └── fibonacci_dp.py
+│       ├── leetcode/
+│       │   └── problems.py       # All 6 LeetCode problems
+│       └── concurrency/
+│           └── examples.py       # Threading & asyncio
+│
 ├── build.sbt                     # Scala build configuration
+├── setup.py                      # Python package configuration
+├── requirements.txt              # Python dependencies
 └── README.md                     # This file
 ```
 
@@ -62,9 +78,9 @@ DataStructuresAndAlgorithm/
 
 ### Data Structures
 
-| Data Structure | Java | Scala | Features |
-|---------------|------|-------|----------|
-| Singly Linked List | ✅ | ✅ | Insert, Delete, Count, Print, Access by index |
+| Data Structure | Java | Scala | Python | Features |
+|---------------|------|-------|--------|----------|
+| Singly Linked List | ✅ | ✅ | ✅ | Insert, Delete, Count, Print, Access by index |
 
 **Scala Improvements:**
 - Both immutable (functional) and mutable versions
@@ -72,27 +88,41 @@ DataStructuresAndAlgorithm/
 - Type parameterization (generics)
 - Tail recursion optimization
 
+**Python Improvements:**
+- Type hints with generics
+- Magic methods (`__len__`, `__iter__`, `__str__`, `__getitem__`)
+- Property decorators
+- Both mutable and immutable implementations
+- Full Python idioms support
+
 ### Algorithms
 
-| Algorithm | Java | Scala | Approach |
-|-----------|------|-------|----------|
-| Fibonacci (Dynamic Programming) | ✅ | ✅ | Memoization, recursion |
+| Algorithm | Java | Scala | Python | Approach |
+|-----------|------|-------|--------|----------|
+| Fibonacci (Dynamic Programming) | ✅ | ✅ | ✅ | Memoization, recursion |
 
 **Scala Improvements:**
 - 6 different implementations (memoization, tail-recursive, iterative, lazy stream, matrix exponentiation)
 - Uses BigInt for large numbers
 - Performance benchmarks included
 
+**Python Improvements:**
+- 7 different implementations including Binet's formula
+- `@lru_cache` decorator for automatic memoization
+- Generator for infinite sequences
+- Performance benchmarking framework
+- Type hints throughout
+
 ### LeetCode Problems
 
-| # | Problem | Java | Scala | Difficulty |
-|---|---------|------|-------|------------|
-| 1 | Two Sum | ✅ | ✅ | Easy |
-| 7 | Reverse Integer | ✅ | ✅ | Medium |
-| 9 | Palindrome Number | ✅ | ✅ | Easy |
-| 13 | Roman to Integer | ✅ | ✅ | Easy |
-| 14 | Longest Common Prefix | ✅ | ✅ | Easy |
-| 20 | Valid Parentheses | ✅ | ✅ | Easy |
+| # | Problem | Java | Scala | Python | Difficulty |
+|---|---------|------|-------|--------|------------|
+| 1 | Two Sum | ✅ | ✅ | ✅ | Easy |
+| 7 | Reverse Integer | ✅ | ✅ | ✅ | Medium |
+| 9 | Palindrome Number | ✅ | ✅ | ✅ | Easy |
+| 13 | Roman to Integer | ✅ | ✅ | ✅ | Easy |
+| 14 | Longest Common Prefix | ✅ | ✅ | ✅ | Easy |
+| 20 | Valid Parentheses | ✅ | ✅ | ✅ | Easy |
 
 **Scala Improvements:**
 - Multiple solution approaches for each problem
@@ -100,6 +130,13 @@ DataStructuresAndAlgorithm/
 - Pattern matching
 - Option/Either types for safe error handling
 - Performance comparisons
+
+**Python Improvements:**
+- Pythonic solutions using list comprehensions, zip, etc.
+- Type hints throughout
+- Multiple approaches per problem (3-5 each)
+- Bonus features (e.g., generate valid parentheses, int to roman)
+- Clean, readable code following PEP 8
 
 ### Threading Examples
 
@@ -121,6 +158,17 @@ DataStructuresAndAlgorithm/
 8. Thread pools with ExecutionContext
 9. Synchronized shared resources
 10. Complete concurrency examples
+
+**Python Implementations:**
+1. Thread class and target functions
+2. Stoppable threads with Event
+3. Thread synchronization with Lock
+4. Producer-Consumer with queue.Queue
+5. **ThreadPoolExecutor** - Thread pools
+6. **async/await** - Modern asyncio
+7. **Async generators** - Async iteration
+8. Async Producer-Consumer
+9. Performance comparisons (Threading vs Asyncio)
 
 ## Running the Code
 
@@ -150,6 +198,27 @@ sbt "runMain com.mounish.ScalaMain --interactive"
 
 See [scala/README.md](scala/README.md) for detailed Scala instructions.
 
+### Python
+
+```bash
+# Interactive menu (recommended)
+python -m com.mounish.main
+
+# Run all demos
+python -m com.mounish.main --all
+
+# Run specific demonstrations
+python -m com.mounish.main --ds          # Data structures
+python -m com.mounish.main --algo        # Algorithms
+python -m com.mounish.main --leetcode    # LeetCode problems
+python -m com.mounish.main --concurrency # Threading & asyncio
+
+# Install dependencies (optional, for testing/linting)
+pip install -r requirements.txt
+```
+
+See [python/README.md](python/README.md) for detailed Python instructions.
+
 ## Key Features
 
 ### Java Version
@@ -172,6 +241,19 @@ See [scala/README.md](scala/README.md) for detailed Scala instructions.
 - ✅ Tail call optimization
 - ✅ Higher-order functions
 
+### Python Version
+- ✅ All Java features plus:
+- ✅ Type hints (Python 3.5+)
+- ✅ List comprehensions and generators
+- ✅ Decorators (@lru_cache, @property, @dataclass)
+- ✅ Magic methods (__len__, __iter__, etc.)
+- ✅ Context managers (with statement)
+- ✅ Modern async/await with asyncio
+- ✅ Multiple approaches per problem
+- ✅ Pythonic idioms throughout
+- ✅ Performance benchmarking
+- ✅ Clean, readable PEP 8 style
+
 ## Scala Enhancements
 
 The Scala implementations include significant improvements:
@@ -185,18 +267,35 @@ The Scala implementations include significant improvements:
 7. **Better Generics** - Type parameterization with variance
 8. **Lazy Evaluation** - Infinite sequences with LazyList
 
-## Comparison: Java vs Scala
+## Python Enhancements
 
-| Feature | Java | Scala |
-|---------|------|-------|
-| Paradigm | OOP | OOP + Functional |
-| Immutability | Manual | Default |
-| Null Safety | No | Yes (Option) |
-| Pattern Matching | Limited | Powerful |
-| Type Inference | Limited | Excellent |
-| Concurrency | Threads, Executors | Futures, Actors |
-| Collections | Mutable default | Immutable default |
-| Verbosity | Higher | Lower |
+The Python implementations showcase modern Python features:
+
+1. **Type Hints** - Full type annotations with generics for better IDE support
+2. **Pythonic Code** - List comprehensions, generators, decorators
+3. **Magic Methods** - `__len__`, `__iter__`, `__str__`, `__getitem__` for natural Python usage
+4. **Decorators** - `@lru_cache` for automatic memoization, `@property` for getters
+5. **Async/Await** - Modern asyncio for efficient I/O-bound concurrency
+6. **Multiple Approaches** - 3-7 different solutions per problem
+7. **Performance Benchmarks** - Compare different approaches
+8. **Clean Code** - PEP 8 compliant, readable, well-documented
+
+## Comparison: Java vs Scala vs Python
+
+| Feature | Java | Scala | Python |
+|---------|------|-------|--------|
+| Paradigm | OOP | OOP + Functional | OOP + Functional |
+| Immutability | Manual | Default | Manual |
+| Null Safety | No | Yes (Option) | No (but Optional) |
+| Pattern Matching | Limited | Powerful | Good (3.10+) |
+| Type Inference | Limited | Excellent | Excellent |
+| Type System | Static | Static | Dynamic + Hints |
+| Concurrency | Threads, Executors | Futures, Actors | async/await, Threads |
+| Collections | Mutable default | Immutable default | Mutable default |
+| Verbosity | Higher | Lower | Lowest |
+| Learning Curve | Medium | Steep | Gentle |
+| Performance | Fast | Fast | Moderate |
+| Ecosystem | Huge | Large | Huge |
 
 ## Learning Objectives
 
@@ -222,6 +321,11 @@ This repository helps you learn:
 - SBT (Scala Build Tool)
 - JDK 8 or higher
 
+### Python
+- Python 3.8 or higher
+- pip (Python package installer)
+- Optional: pytest, mypy, black (for testing and development)
+
 ## Contributing
 
 Contributions are welcome! Please:
@@ -244,6 +348,7 @@ Planned implementations:
 **Mounish**
 - Java implementations: Original work
 - Scala implementations: Enhanced versions with functional programming
+- Python implementations: Modern Pythonic versions with type hints and async/await
 
 ## License
 
